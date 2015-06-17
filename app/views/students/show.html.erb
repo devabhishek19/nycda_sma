@@ -1,0 +1,15 @@
+<h1>Student Profile</h1>
+	<%if @student%>
+
+				Fname : <span><%=@student.fname%></span><br><br>
+				Lname : <span><%=@student.lname%></span><br><br>
+				Email : <span><%=@student.email%></span><br><br>
+				Phone : <span><%=@student.phone%></span><br><br>
+		
+
+	<%=link_to "Edit", edit_student_path(params[:id])%> | <%=link_to "Delete", student_path, method: :delete%>
+
+	<%else%>
+		<h3>Student not found</h3>
+	<%end%>
+<h3><%=link_to "Back to the Home page", students_path%></h3>

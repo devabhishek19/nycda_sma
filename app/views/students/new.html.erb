@@ -1,0 +1,28 @@
+<h1>Create a new Student here</h1>
+
+<%= form_for @student do |s|%>
+<p>
+	<%=s.label :fname%><br>
+	<%= s.text_field :fname%><br>
+</p>
+<p>
+	<%=s.label :lname%><br>
+	<%=s.text_field :lname%><br>
+</p>
+<p>
+	<%=s.label :email%><br>
+	<%=s.email_field :email%><br>
+</p>
+<p>
+	<%=s.label :phone%><br>
+	<%=s.text_field :phone%><br>
+</p>
+<p>
+	<%=s.label :status%><br>
+	<%=s.text_field :status%><br>
+</p>
+<p>
+	<%=s.submit "Create a new user"%>
+</p>
+	
+<%end%>
