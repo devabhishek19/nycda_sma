@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+.sucsess_message{
+  color:green;
+  font-size: 2em;
+}
+
+.error_message{
+  color:red;
+  font-size: 2em;
+}
+
+#error_explanation{
+  color:red;
+}

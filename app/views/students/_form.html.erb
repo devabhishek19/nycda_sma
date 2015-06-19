@@ -1,0 +1,42 @@
+
+  <%= form_for @student do |s|%>
+
+  <%if @student.errors.any? %>
+    <div id="error_explation">
+      <h2>
+        <%= pluralize(@student.errors.count, "error")%>
+        prevent this student from save</h2>
+      <ul>
+        <% @student.errors.full_messages.each do |error|%>
+          <li>
+            <%= error %>
+          </li>
+        <%end%>
+      </ul>
+    </div>
+  <%end%>
+<p>
+  <%=s.label :fname, class:"form_label"%>
+  <%= s.text_field :fname%><br>
+</p>
+<p>
+  <%=s.label :lname, class:"form_label"%>
+  <%=s.text_field :lname%><br>
+</p>
+<p>
+  <%=s.label :email, class:"form_label"%>
+  <%=s.email_field :email%><br>
+</p>
+<p>
+  <%=s.label :phone, class:"form_label"%>
+  <%=s.text_field :phone%><br>
+</p>
+<p>
+  <%=s.label :status, class:"form_label"%>
+  <%=s.text_field :status%><br>
+</p>
+<p>
+  <%=s.submit "Create a new user", class:"submit_button"%>
+</p>
+  
+<%end%>
