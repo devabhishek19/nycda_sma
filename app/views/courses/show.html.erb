@@ -1,0 +1,15 @@
+<h1>detail of course</h1>
+<div>
+  Name : <%=@course.name%><br>
+  Created at : <%=@course.created_at%><br>
+  Updated at : <%=@course.updated_at%><br>
+</div>
+<div>
+  <%=link_to "Edit the course", edit_course_path(params[:id])%> |
+<%= link_to "delete", course_path(params[:id]), method: :delete%>
+</div>
+<div>
+  <%=link_to "Back to list", courses_path%>
+</div>
+
+

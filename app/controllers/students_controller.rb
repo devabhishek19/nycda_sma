@@ -1,4 +1,7 @@
 class StudentsController < ApplicationController
+  #to restrict anyone from using all the pafe
+  before_action :authenticate
+
   def index
   	@students = Student.all
   end

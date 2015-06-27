@@ -1,0 +1,37 @@
+<h1>Signup</h1>
+
+<%=form_for @user do |f|%>
+  <%if @user.errors.any? %>
+      <div id="error_explation">
+        <h2>
+          <%= pluralize(@user.errors.count, "error")%>
+          prevent this user from save</h2>
+        <ul>
+          <% @user.errors.full_messages.each do |error|%>
+            <li>
+              <%= error %>
+            </li>
+          <%end%>
+        </ul>
+      </div>
+    <%end%>
+  <div>
+    <%= f.label :email%>
+    <%= f.email_field :email%>
+  </div>
+  <div>
+    <%= f.label :full_name%>
+    <%= f.text_field :full_name%>
+  </div>
+  <div>
+    <%= f.label :password%>
+    <%= f.password_field :password%>
+  </div>
+  <div>
+    <%= f.label :password_confirmation%>
+    <%= f.password_field :password_confirmation%>
+  </div>
+  <div>
+    <%= f.submit "signup"%>
+  </div>
+<%end%>

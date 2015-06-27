@@ -7,6 +7,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+  <%= render 'layouts/navigation'%>
   <div class="sucsess_message">
     <%= flash[:notice] if flash[:notice]%>
   </div>
