@@ -1,14 +1,16 @@
-<div class="navbar navbar-inverse navbar-right">
-  <ul class="nav navbar-nav">
-
-    <%if current_user%>
-      <li> Welcome <%= current_user.email%></li>
-      <li><%= link_to "Sign out", sign_out_path, method: :delete%></li>
-    <%else%>
-      <li><%=link_to "Sign in", sign_in_path%></li>
-    <%end%>
-    <li><%=link_to "Courses", courses_path%></li>
-    <li><a href="">Help</a></li>
-    <li><a href="">About us</a></li>
+<div class="navbar">
+  <ul>
+    <% if current_user %>
+      <li> Welcome <%= current_user.email %></li>
+      <li><%= link_to "Sign out", sign_out_path, method: :delete %></li>
+      <li><%= link_to "Students", students_path %></li>
+      <li><%= link_to "Courses", courses_path %></li>
+    <% else %>
+      <li><%= link_to "Sign In", sign_in_path %></li>
+      <li><%= link_to "Register", new_user_path %></li>
+    <% end %>
+    
+    <li>Help</li>
+    <li>About Us</li>
   </ul>
 </div>

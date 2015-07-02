@@ -34,9 +34,11 @@
 <p>
   <%=s.label :status, class:"form_label"%>
   <%=s.text_field :status%><br>
-</p>
 <p>
-  <%=s.submit "Create a new user", class:"submit_button"%>
+    <%= collection_check_boxes(:student, :course_ids, Course.all, :id, :name) %>
+  <p>
+<p>
+  <%=s.submit "Create a new student", class:"submit_button"%>
 </p>
   
 <%end%>

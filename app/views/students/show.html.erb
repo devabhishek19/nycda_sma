@@ -14,6 +14,13 @@
 	<%end%>
 <h3><%=link_to "Back to the Home page", students_path%></h3>
 
+<h2>Courses</h2>
+<ul>
+  <% @student.courses.each do |course| %>
+    <li><%= course.name %></li>
+  <% end %>
+</ul>
+
 <h2>Projects</h2>
 
 <ul>
