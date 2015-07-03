@@ -1,6 +1,6 @@
 class StudentsController < ApplicationController
   #to restrict anyone from using all the pafe
-  before_action :authenticate
+  before_action :authenticate_user!
 
   def index
   	@students = Student.all
@@ -55,7 +55,7 @@ class StudentsController < ApplicationController
   private
 
   def student_params
-  	params.require(:student).permit(:fname, :lname, :email, :phone, :status, :course_ids=>[])
+  	params.require(:student).permit(:fname, :lname, :email, :phone, :status, :photo, :course_ids=>[])
   end
 
   

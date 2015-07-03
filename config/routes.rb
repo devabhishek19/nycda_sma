@@ -1,16 +1,11 @@
 Rails.application.routes.draw do
-  # get 'students/index'
+  devise_for :users
   root 'home#index'
+
   resources :students
-  resources :users
+  resources :users, only: [:new, :create]
+  resources :projects, only: [:new, :create]
   resources :courses
-  resources :projects
-
-  # resources :sessions
-
-  get '/sign_in', to: 'sessions#new'
-  post '/sign_in', to: 'sessions#create'
-  delete '/sign_out', to: 'sessions#destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

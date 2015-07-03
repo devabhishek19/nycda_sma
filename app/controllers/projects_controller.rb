@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
 
-  before_action :authenticate
+ before_action :authenticate_user!
   def new
     @project = Project.new
   end

@@ -1,10 +1,14 @@
 <h1>Courses</h1>
-<%=link_to "create a new Course", new_course_path%>
 
-<ul>
-  <%@courses.each do |course|%>
-    <li>
-      <%=link_to course.name, course_path(course)%>
-    </li>
-  <%end%>
-</ul>
+<div>
+  <ul>
+    <%@courses.each do |course|%>
+      <li>
+        <%=link_to course.name, course_path(course)%>
+      </li>
+    <%end%>
+  </ul>
+</div>
+<div>
+  <%=link_to "create a new Course", new_course_path%>
+</div>
